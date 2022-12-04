@@ -1,5 +1,9 @@
 import fs from "fs";
 
+const color = {
+  red: "\x1b[31m",
+};
+
 const path = "./src/fs/files/fresh.txt";
 
 const fileCreate = fs.createWriteStream(path);
@@ -11,7 +15,7 @@ const create = async () => {
   fileCreate.write(fileText);
 
   if (fs.existsSync(path)) {
-    console.log(errorMessage);
+    console.log(`${color.red}Error: ${errorMessage}`);
   }
 };
 
