@@ -15,7 +15,7 @@ const read = async () => {
     } else {
       const fileTextRead = fs.createReadStream(path, { encoding: "utf8" });
       fileTextRead.on("data", (data) => {
-        stdout.write(data);
+        console.log(data);
       });
     }
   } catch (err) {
